@@ -13,6 +13,9 @@ inputs:
   repository:
     description: 'The repository name in full'
     required: false
+  prerelease:
+    description: 'Whether to include prereleases or not'
+    required: false
 outputs:
   release:
     description: 'Latest release'
