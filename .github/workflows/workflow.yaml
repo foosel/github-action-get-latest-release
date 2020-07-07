@@ -9,9 +9,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - uses: ./
+        id: test1
         with:
-            repository: pozetroninc/github-action-get-latest-release
+            repository: OctoPrint/OctoPrint
       - uses: ./
+        id: test2
         with:
-            owner: pozetroninc
-            repo: github-action-get-latest-release
+            owner: OctoPrint
+            repo: OctoPrint
+      - uses: ./
+        id: test3
+        with:
+            repository: OctoPrint/OctoPrint
+            prerelease: true
+      - run: |
+            echo "Test1: ${{ steps.test1.outputs.release }}"
+            echo "Test2: ${{ steps.test2.outputs.release }}"
+            echo "Test3: ${{ steps.test3.outputs.release }}"
