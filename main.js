@@ -25,7 +25,7 @@ async function run() {
                 owner: owner,
                 repo: repo,
             });
-            core.setOutput('release', release.tag_name);
+            core.setOutput('release', release.data.tag_name);
         }
     } catch (error) {
         core.setFailed(error.message);
